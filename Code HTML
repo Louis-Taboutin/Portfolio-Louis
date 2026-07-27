@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Taboutin - Portfolio</title>
+    <style>
+        /* Variables de couleurs et polices */
+        :root {
+            --primary: #0a192f;
+            --secondary: #64ffda;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* En-tête (Hero Section) */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            color: var(--secondary);
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Sections générales */
+        section {
+            padding: 4rem 10%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .bg-gray {
+            background-color: var(--bg-light);
+        }
+
+        /* Grille des expériences/projets */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+        }
+
+        .card-content p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Section Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Remplace ce lien par l'URL de ta propre photo -->
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Photo de Louis Taboutin" class="profile-img">
+        <h1>Louis Taboutin</h1>
+        <h2>Étudiant MSc Finance @ Paris Dauphine | Co-fondateur DAU'IA</h2>
+    </header>
+
+    <section>
+        <h2 class="section-title">À propos de mon profil</h2>
+        <p>Passionné par la modélisation financière, l'analyse de données et l'innovation technologique. Mon parcours académique à l'Université Paris Dauphine - PSL et mes expériences professionnelles me permettent d'allier une solide compréhension des enjeux de la gestion d'actifs et du M&A avec une maîtrise pratique des outils d'intelligence artificielle.</p>
+    </section>
+
+    <section class="bg-gray">
+        <h2 class="section-title">Projets & Expériences</h2>
+        <div class="grid">
+            
+            <!-- Carte 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80" alt="Écrans de trading et graphiques">
+                <div class="card-content">
+                    <h3>Data Dashboard (Trading)</h3>
+                    <p>Conception et développement d'un tableau de bord de données sur mesure pour faciliter la prise de décision d'équipes de traders.</p>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Outils d'intelligence artificielle">
+                <div class="card-content">
+                    <h3>Hackathons & IA (DAU'IA)</h3>
+                    <p>Co-organisation d'événements technologiques majeurs (comme le Paris Build) en partenariat avec des acteurs leaders du secteur de l'intelligence artificielle et de la recherche.</p>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Bureaux financiers">
+                <div class="card-content">
+                    <h3>Pricing & Rentabilité</h3>
+                    <p>Analyse de la rentabilité des fonds et participation active aux initiatives fiscales et stratégiques au sein d'une banque d'investissement.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>Je suis toujours ouvert pour échanger sur des opportunités en gestion de trésorerie, M&A ou analyse financière.</p>
+        <a href="mailto:ton.email@dauphine.eu" class="btn">M'envoyer un email</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Louis Taboutin. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
