@@ -15,11 +15,16 @@
   <style>
     :root {
       --bg-color: #0c0f0f;
+      --bg-color-alt: #101414;
       --text-color: #f4f4f5;
+      --text-muted: #a1a1aa;
       --accent-color: #64ffda;
+      --border-color: rgba(255, 255, 255, 0.1);
       --font-sans: 'Space Grotesk', sans-serif;
       --font-serif: 'Fraunces', serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       background-color: var(--bg-color);
@@ -145,6 +150,202 @@
     .btn-pill:hover {
       background: rgba(255, 255, 255, 0.1);
     }
+
+    /* ============ SECTIONS COMMUNES ============ */
+    section.page-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+    }
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1.25rem;
+    }
+    .section-kicker::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent-color);
+      display: inline-block;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      font-weight: 500;
+      margin: 0 0 1rem 0;
+    }
+    .section-intro {
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ============ EXPERIENCES (timeline) ============ */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 1px solid var(--border-color);
+      margin-left: 6px;
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 3rem 2.5rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -6.5px;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg-color);
+      border: 2px solid var(--accent-color);
+    }
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-role {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: white;
+    }
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .timeline-org {
+      color: var(--accent-color);
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+    .timeline-org span {
+      color: var(--text-muted);
+    }
+    .timeline-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+    .timeline-list li { margin-bottom: 0.35rem; }
+    .timeline-list li:last-child { margin-bottom: 0; }
+
+    .subsection-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 3.5rem 0 1.5rem;
+    }
+
+    /* ============ PROJETS ============ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(100, 255, 218, 0.3);
+    }
+    .project-tag {
+      display: inline-flex;
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      background: rgba(100, 255, 218, 0.08);
+      border: 1px solid rgba(100, 255, 218, 0.25);
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+      margin-bottom: 1.1rem;
+    }
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: white;
+      margin: 0 0 0.75rem 0;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .project-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .metric-chip {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-color);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 0.45rem 0.7rem;
+      line-height: 1.3;
+    }
+    .metric-chip b {
+      color: var(--accent-color);
+      display: block;
+      font-size: 0.95rem;
+    }
+    .project-stack {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .stack-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      padding: 0.25rem 0.65rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-title { font-size: 3rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body data-page="home">
@@ -209,6 +410,178 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCES ============ -->
+    <section class="page-section" id="experiences">
+      <div class="section-kicker">Parcours</div>
+      <h2 class="section-title">Expériences</h2>
+      <p class="section-intro">
+        Un parcours à l'intersection de la finance d'entreprise, du wealth management et de l'entrepreneuriat associatif, entre Paris et l'Asie.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Assistant des ventes</span>
+            <span class="timeline-date">Juin – Août 2025</span>
+          </div>
+          <div class="timeline-org">Lyhin Engineering Enterprise <span>— Penang, Malaisie</span></div>
+          <ul class="timeline-list">
+            <li>Gestion des stocks de pièces de rechange, amélioration de l'organisation et de l'efficacité opérationnelle</li>
+            <li>Coordination avec les fournisseurs pour le suivi des commandes et livraisons</li>
+            <li>Réception, contrôle et traitement des pièces détachées pour équipements industriels</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Origination M&A</span>
+            <span class="timeline-date">Mai – Juin 2024</span>
+          </div>
+          <div class="timeline-org">Matrila <span>— Paris, France</span></div>
+          <ul class="timeline-list">
+            <li>Business developer pour la société Outmatch</li>
+            <li>Optimisation du processus de prospection par des algorithmes (cibles EBITDA 500k–5M€)</li>
+            <li>Réalisation d'analyses financières d'entreprises</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Assistant en gestion de patrimoine</span>
+            <span class="timeline-date">Juin – Juil. 2023</span>
+          </div>
+          <div class="timeline-org">AAG Finance <span>— Paris, France</span></div>
+          <ul class="timeline-list">
+            <li>Rédaction de contrats clients et de mandats d'investissement</li>
+            <li>Évaluation de la capacité d'emprunt des clients via analyse financière et contrôles de conformité</li>
+            <li>Participation à la création et à la gestion d'une société civile immobilière (SCI)</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Professeur particulier</span>
+            <span class="timeline-date">2022 – Aujourd'hui</span>
+          </div>
+          <div class="timeline-org">Eddmon, Grade Up <span>— Paris, France</span></div>
+          <ul class="timeline-list">
+            <li>Plus de 400 heures de cours particuliers et de soutien scolaire dispensées</li>
+            <li>Accompagnement d'élèves de collège et de lycée, jusqu'au niveau L3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection-label">Engagement associatif</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Co-fondateur, puis Manager, Trésorier et Vice-Président</span>
+            <span class="timeline-date">2024 – Aujourd'hui</span>
+          </div>
+          <div class="timeline-org">DAU'IA <span>— Paris, France</span></div>
+          <ul class="timeline-list">
+            <li>Organisation d'échanges avec des experts de l'IA lors de conférences et tables rondes (Dauphine Digital Days)</li>
+            <li>Pilotage de bout en bout de conférences, débats et hackathons sur l'IA (HackEurope)</li>
+            <li>Sécurisation et suivi de partenariats, dont Unaite (HackEurope : 250k€ de cash prize)</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Président d'association</span>
+            <span class="timeline-date">2023 – 2025</span>
+          </div>
+          <div class="timeline-org">EPICOOP PSL <span>— Paris, France</span></div>
+          <ul class="timeline-list">
+            <li>Direction d'une association solidaire de 60 membres actifs : stratégie, opérations, coordination d'équipe</li>
+            <li>Distribution mensuelle de denrées alimentaires et produits d'hygiène pour 250 personnes</li>
+            <li>Développement de partenariats avec des donateurs majeurs (Dons Solidaires, Disneyland Paris, Yves Rocher)</li>
+            <li>Gestion d'un budget annuel de plus de 11 000€ et de plus de 110 000€ de matériel donné</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role">Bénévole</span>
+            <span class="timeline-date">2021 – 2025</span>
+          </div>
+          <div class="timeline-org">Entraide scolaire amicale, Ludothèque de Marly-le-Roi <span>— Paris, France</span></div>
+          <ul class="timeline-list">
+            <li>Soutien scolaire personnalisé et mentorat d'un enfant de 6 ans</li>
+            <li>Accueil des familles et gestion de l'organisation et de l'inventaire des jeux et jouets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS IA & FINANCE ============ -->
+    <section class="page-section" id="projets">
+      <div class="section-kicker">Portfolio</div>
+      <h2 class="section-title">Projets IA & Finance</h2>
+      <p class="section-intro">
+        Deux projets qui illustrent ma double approche : la rigueur de l'analyse financière fondamentale, et l'application de méthodes quantitatives et académiques pour générer de l'alpha.
+      </p>
+
+      <div class="projects-grid">
+        <!-- Projet 1 : Publicis -->
+        <article class="project-card">
+          <span class="project-tag">Analyse financière & Valorisation</span>
+          <h3 class="project-title">Publicis Groupe — Diagnostic & recommandation d'achat</h3>
+          <p class="project-desc">
+            Diagnostic complet des états financiers de Publicis Groupe (compte de résultat, bilan, politique
+            d'investissement, rentabilité) et analyse comparative sectorielle face à IPG, Omnicom et WPP.
+            Application de multiples de valorisation (EV/Sales, EV/EBITDA, EV/EBIT, P/E) pour construire une
+            thèse d'investissement argumentée, aboutissant à une recommandation d'achat.
+          </p>
+          <div class="project-metrics">
+            <div class="metric-chip"><b>+15,01%</b>ROE 2024</div>
+            <div class="metric-chip"><b>7,4x</b>EV/EBITDA 2025e</div>
+            <div class="metric-chip"><b>13,6x</b>P/E moyen des pairs</div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-pill">Analyse financière</span>
+            <span class="stack-pill">Valorisation par multiples</span>
+            <span class="stack-pill">Benchmark sectoriel</span>
+            <span class="stack-pill">Excel</span>
+          </div>
+        </article>
+
+        <!-- Projet 2 : IVAR -->
+        <article class="project-card">
+          <span class="project-tag">Recherche quantitative</span>
+          <h3 class="project-title">IVAR — Systematic Value Premium Strategy</h3>
+          <p class="project-desc">
+            Modèle d'investissement quantitatif long-only sur le Top 500 US Large Caps, corrigeant trois biais
+            académiques de la value passive : ajustement du Book-to-Market par le capital intangible (méthode
+            Eisfeldt, Kim & Papanikolaou, perpetual inventory du SG&A, δ = 0,20), tri de la value within-industry,
+            et signal composite value/quality/momentum (50/25/25) intégrant le F-Score de Piotroski et les
+            indicateurs de qualité AQR pour limiter les « value traps ». Backtesté sur 2000–2024 avec séparation
+            in-sample (2000–2012) / out-of-sample (2013–2024), régression Fama-French 5 facteurs + momentum,
+            tests de robustesse et t-test de significativité (Newey-West HAC).
+          </p>
+          <div class="project-metrics">
+            <div class="metric-chip"><b>0,654</b>Sharpe (vs 0,242 value passive)</div>
+            <div class="metric-chip"><b>11,13%</b>Rendement annualisé net</div>
+            <div class="metric-chip"><b>+5,29%</b>Surperformance OOS (p = 0,014)</div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">Backtesting</span>
+            <span class="stack-pill">Fama-French 5</span>
+            <span class="stack-pill">Piotroski F-Score</span>
+            <span class="stack-pill">AQR Quality</span>
+          </div>
+        </article>
       </div>
     </section>
   </main>
