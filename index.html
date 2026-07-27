@@ -1,204 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Taboutin - Portfolio</title>
-    <style>
-        /* Variables de couleurs et polices */
-        :root {
-            --primary: #0a192f;
-            --secondary: #64ffda;
-            --text-main: #333333;
-            --text-light: #666666;
-            --bg-light: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* En-tête (Hero Section) */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-
-        header h2 {
-            color: var(--secondary);
-            font-weight: 400;
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Sections générales */
-        section {
-            padding: 4rem 10%;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: var(--primary);
-            border-bottom: 3px solid var(--secondary);
-            display: inline-block;
-            margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
-        }
-
-        .bg-gray {
-            background-color: var(--bg-light);
-        }
-
-        /* Grille des expériences/projets */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-content h3 {
-            margin: 0 0 1rem 0;
-            color: var(--primary);
-        }
-
-        .card-content p {
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        /* Section Contact */
-        .contact {
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Pied de page */
-        footer {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Louis TABOUTIN — Portfolio</title>
+  <meta name="description" content="Portfolio de Louis Taboutin, étudiant en MSc Finance à l'Université Paris Dauphine - PSL et Co-fondateur de DAU'IA." />
+  <meta name="theme-color" content="#0c0f0f" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <!-- J'inclus ici un CSS minimal pour simuler le style DAU'IA afin que le bandeau s'affiche correctement même sans le fichier externe -->
+  <style>
+    :root {
+      --bg-color: #0c0f0f;
+      --text-color: #f4f4f5;
+      --accent-color: #64ffda;
+      --font-sans: 'Space Grotesk', sans-serif;
+      --font-serif: 'Fraunces', serif;
+    }
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-sans);
+    }
+    /* ============ NAVBAR (Bandeau) ============ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(12, 15, 15, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+    .navbar-inner {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    .navbar-col {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .navbar-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+    }
+    .navbar-menu {
+      display: flex;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+    }
+    .navbar-link {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    .navbar-link:hover {
+      color: white;
+    }
+    .navbar-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--bg-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.3s ease;
+    }
+    .navbar-cta:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 10;
+      position: relative;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      line-height: 1.1;
+      margin: 0 0 1.5rem 0;
+    }
+    .hero-title .line {
+      display: block;
+    }
+    .hero-title .alt {
+      color: #888;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #a1a1aa;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
-<body>
+<body data-page="home">
 
-    <header>
-        <!-- Remplace ce lien par l'URL de ta propre photo -->
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Photo de Louis Taboutin" class="profile-img">
-        <h1>Louis Taboutin</h1>
-        <h2>Étudiant MSc Finance @ Paris Dauphine | Co-fondateur DAU'IA</h2>
-    </header>
+  <!-- ============ PROGRESS BAR ============ -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-    <section>
-        <h2 class="section-title">À propos de mon profil</h2>
-        <p>Passionné par la modélisation financière, l'analyse de données et l'innovation technologique. Mon parcours académique à l'Université Paris Dauphine - PSL et mes expériences professionnelles me permettent d'allier une solide compréhension des enjeux de la gestion d'actifs et du M&A avec une maîtrise pratique des outils d'intelligence artificielle.</p>
-    </section>
+  <!-- ============ NAVBAR (Bandeau copié du site DAU'IA) ============ -->
+  <header class="navbar" id="top">
+    <div class="navbar-inner">
+      <!-- Left : Nom + liens -->
+      <div class="navbar-col is-left">
+        <a href="#top" class="navbar-cell navbar-logo" aria-label="Louis Taboutin — Accueil">
+          Louis TABOUTIN
+        </a>
+        <a href="https://fr.linkedin.com/in/louis-taboutin" target="_blank" rel="noopener" class="navbar-cell navbar-wapp" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.53v-4.58c0-2.45-1.31-3.59-3.06-3.59-1.41 0-2.04.78-2.39 1.32v-1.13h-2.67c.04.75 0 8.35 0 8.35h2.67v-4.66c0-.24.02-.48.09-.65.19-.48.63-.98 1.37-.98.97 0 1.35.74 1.35 1.82v4.47h2.64z"/></svg>
+        </a>
+      </div>
 
-    <section class="bg-gray">
-        <h2 class="section-title">Projets & Expériences</h2>
-        <div class="grid">
-            
-            <!-- Carte 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80" alt="Écrans de trading et graphiques">
-                <div class="card-content">
-                    <h3>Data Dashboard (Trading)</h3>
-                    <p>Conception et développement d'un tableau de bord de données sur mesure pour faciliter la prise de décision d'équipes de traders.</p>
-                </div>
-            </div>
-
-            <!-- Carte 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Outils d'intelligence artificielle">
-                <div class="card-content">
-                    <h3>Hackathons & IA (DAU'IA)</h3>
-                    <p>Co-organisation d'événements technologiques majeurs (comme le Paris Build) en partenariat avec des acteurs leaders du secteur de l'intelligence artificielle et de la recherche.</p>
-                </div>
-            </div>
-
-            <!-- Carte 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Bureaux financiers">
-                <div class="card-content">
-                    <h3>Pricing & Rentabilité</h3>
-                    <p>Analyse de la rentabilité des fonds et participation active aux initiatives fiscales et stratégiques au sein d'une banque d'investissement.</p>
-                </div>
-            </div>
-
+      <!-- Center : menu (pilule unique comme sur DAU'IA) -->
+      <nav class="navbar-col is-center" aria-label="Navigation principale">
+        <div class="navbar-menu">
+          <a href="#top" class="navbar-link" data-nav="accueil"><span class="navbar-link-text">Accueil</span></a>
+          <a href="#experiences" class="navbar-link" data-nav="experiences"><span class="navbar-link-text">Expériences</span></a>
+          <a href="#projets" class="navbar-link" data-nav="projets"><span class="navbar-link-text">Projets IA & Finance</span></a>
         </div>
+      </nav>
+
+      <!-- Right : CTA -->
+      <div class="navbar-col is-right">
+        <a href="mailto:louis.taboutin@dauphine.eu" class="navbar-cta">
+          <span>Me contacter</span>
+          <span class="navbar-cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="smooth-content">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="accueil">
+      <!-- Zone prévue pour le canvas d'arrière-plan (neural network) du site original -->
+      <div class="hero-media" aria-hidden="true">
+        <canvas id="brain-bgnet" class="brain-bgnet"></canvas>
+      </div>
+
+      <!-- Contenu : titre serif bas-gauche -->
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <h1 class="hero-title">
+            <span class="line">Allier la Finance.</span>
+            <span class="line alt">Maîtriser l'IA.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Étudiant en MSc Finance à l'Université Paris Dauphine — PSL. Passionné par l'évaluation financière, le M&A et l'application des réseaux de neurones pour innover sur les marchés.
+          </p>
+          <div class="hero-cta">
+            <a href="assets/CV_Louis_TABOUTIN.pdf" target="_blank" class="btn-pill">
+              <span class="btn-pill-text">Télécharger mon CV</span>
+              <span class="btn-pill-icon" aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section class="contact">
-        <h2 class="section-title">Contact</h2>
-        <p>Je suis toujours ouvert pour échanger sur des opportunités en gestion de trésorerie, M&A ou analyse financière.</p>
-        <a href="mailto:ton.email@dauphine.eu" class="btn">M'envoyer un email</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Louis Taboutin. Tous droits réservés.</p>
-    </footer>
-
+  <!-- L'appel des scripts originaux de DAU'IA pour conserver les animations si tu ajoutes les fichiers dans ton repo -->
+  <script src="js/brain.js?v=3" defer></script>
+  <script src="js/main.js?v=4" defer></script>
 </body>
 </html>
