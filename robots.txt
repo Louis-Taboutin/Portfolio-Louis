@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://louis-taboutin.vercel.app/sitemap.xml
