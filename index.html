@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Louis TABOUTIN - Portfolio</title>
+  <meta name="description" content="Portfolio de Louis Taboutin, étudiant en MSc Finance à l'Université Paris Dauphine - PSL et Co-fondateur de DAU'IA." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/png-fe68764800a1.png" />
+  <link rel="apple-touch-icon" href="assets/img/png-00277affd2b9.png" />
+
+  <!-- Open Graph / partage LinkedIn, WhatsApp, etc. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Louis TABOUTIN - Portfolio" />
+  <meta property="og:description" content="Portfolio de Louis Taboutin, étudiant en MSc Finance à l'Université Paris Dauphine - PSL et Co-fondateur de DAU'IA." />
+  <meta property="og:image" content="https://louis-taboutin.vercel.app/assets/og-image.jpg" />
+  <meta property="og:url" content="https://louis-taboutin.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Louis TABOUTIN - Portfolio" />
+  <meta name="twitter:description" content="Portfolio de Louis Taboutin, étudiant en MSc Finance à l'Université Paris Dauphine - PSL et Co-fondateur de DAU'IA." />
+  <meta name="twitter:image" content="https://louis-taboutin.vercel.app/assets/og-image.jpg" />
+  <link rel="canonical" href="https://louis-taboutin.vercel.app/" />
+
+  <!-- Donnees structurees Schema.org -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Louis Taboutin", "url": "https://louis-taboutin.vercel.app/", "jobTitle": "MSc Finance student", "affiliation": {"@type": "CollegeOrUniversity", "name": "Universite Paris Dauphine - PSL"}, "email": "mailto:louis.taboutin@dauphine.eu", "sameAs": ["https://fr.linkedin.com/in/louis-taboutin"]}</script>
+  <meta name="theme-color" content="#0c0f0f" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <!-- J'inclus ici un CSS minimal pour simuler le style DAU'IA afin que le bandeau s'affiche correctement même sans le fichier externe -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+
+  <!-- ============ PROGRESS BAR ============ -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ============ NAVBAR (Bandeau copié du site DAU'IA) ============ -->
+  <header class="navbar" id="top">
+    <div class="navbar-inner">
+      <!-- Left : Nom + liens -->
+      <div class="navbar-col is-left">
+        <a href="#top" class="navbar-cell navbar-logo" aria-label="Louis Taboutin - Accueil">
+          Louis TABOUTIN
+        </a>
+        <a href="https://fr.linkedin.com/in/louis-taboutin" target="_blank" rel="noopener" class="navbar-cell navbar-wapp" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.53v-4.58c0-2.45-1.31-3.59-3.06-3.59-1.41 0-2.04.78-2.39 1.32v-1.13h-2.67c.04.75 0 8.35 0 8.35h2.67v-4.66c0-.24.02-.48.09-.65.19-.48.63-.98 1.37-.98.97 0 1.35.74 1.35 1.82v4.47h2.64z"/></svg>
+        </a>
+      </div>
+
+      <!-- Center : menu (pilule unique comme sur DAU'IA) -->
+      <nav class="navbar-col is-center" aria-label="Navigation principale">
+        <div class="navbar-menu">
+          <a href="#top" class="navbar-link" data-nav="accueil"><span class="navbar-link-text" data-i18n="nav-accueil">Accueil</span></a>
+          <a href="#experiences" class="navbar-link" data-nav="experiences"><span class="navbar-link-text" data-i18n="nav-experiences">Expériences</span></a>
+          <a href="#formation" class="navbar-link" data-nav="formation"><span class="navbar-link-text" data-i18n="nav-formation">Formation</span></a>
+          <a href="finance.html" class="navbar-link" data-nav="finance"><span class="navbar-link-text" data-i18n="nav-finance">Finance</span></a>
+          <a href="ia.html" class="navbar-link" data-nav="ia"><span class="navbar-link-text" data-i18n="nav-ia">IA</span></a>
+          <a href="solidarite.html" class="navbar-link" data-nav="solidarite"><span class="navbar-link-text" data-i18n="nav-solidarite">Solidarité</span></a>
+          <a href="photo.html" class="navbar-link" data-nav="photo"><span class="navbar-link-text" data-i18n="nav-photo">Photo</span></a>
+        </div>
+      </nav>
+
+      <!-- Right : CTA -->
+      <div class="navbar-col is-right">
+        <button type="button" class="quicksum-btn" onclick="openQuickSummary()">
+          <span aria-hidden="true">&#9889;</span><span data-i18n="qs-btn">Résumé 30s</span>
+        </button>
+        <button type="button" class="theme-toggle" onclick="toggleSiteTheme()" aria-label="Changer de theme / Switch theme">
+          <span class="theme-toggle-icon">&#9728;&#65039;</span>
+        </button>
+        <button type="button" class="lang-toggle" onclick="toggleSiteLang()" aria-label="Changer de langue / Switch language">
+          <span class="lang-toggle-globe" aria-hidden="true">&#127760;</span>
+          <span class="lang-toggle-label">EN</span>
+        </button>
+        <button type="button" class="navbar-cta" onclick="openContactForm()">
+          <span data-i18n="nav-contact">Me contacter</span>
+          <span class="navbar-cta-arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="smooth-content">
+    <!-- ============ HERO ============ -->
+    <section class="hero glow-host" id="accueil">
+      <!-- Zone prévue pour le canvas d'arrière-plan (neural network) du site original -->
+      <div class="hero-media" aria-hidden="true">
+        <canvas id="brain-bgnet" class="brain-bgnet"></canvas>
+      </div>
+
+      <div class="glow-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 780" preserveAspectRatio="xMidYMin slice">
+          <path class="glow-line" d="M -20 90 L 260 90 L 340 170 L 340 320" />
+          <path class="glow-line" d="M 1220 60 L 940 60 L 860 140 L 860 260 L 760 360" />
+          <path class="glow-line" d="M -20 420 L 180 420 L 260 500 L 520 500" />
+          <path class="glow-line" d="M 1220 480 L 1020 480 L 940 560 L 700 560" />
+          <path class="glow-line" d="M 420 -20 L 420 120 L 500 200 L 500 340" />
+          <path class="glow-line" d="M 760 -20 L 760 100 L 680 180" />
+          <path class="glow-line" d="M -20 650 L 240 650 L 320 730" />
+          <path class="glow-line" d="M 1220 700 L 980 700 L 900 620 L 640 620" />
+          <circle class="glow-node" cx="340" cy="170" r="3" />
+          <circle class="glow-node" cx="340" cy="320" r="3" />
+          <circle class="glow-node" cx="860" cy="140" r="3" />
+          <circle class="glow-node" cx="760" cy="360" r="3" />
+          <circle class="glow-node" cx="260" cy="500" r="3" />
+          <circle class="glow-node" cx="520" cy="500" r="3" />
+          <circle class="glow-node" cx="940" cy="560" r="3" />
+          <circle class="glow-node" cx="500" cy="200" r="3" />
+          <circle class="glow-node" cx="680" cy="180" r="3" />
+          <circle class="glow-node" cx="320" cy="730" r="3" />
+          <circle class="glow-node" cx="900" cy="620" r="3" />
+          <circle class="glow-node" cx="640" cy="620" r="3" />
+        </svg>
+      </div>
+
+      <!-- Contenu : titre serif bas-gauche -->
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <h1 class="hero-title">
+            <span class="line" data-i18n="hero-line1">Allier la Finance.</span>
+            <span class="line alt" data-i18n="hero-line2">Maîtriser l'IA.</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero-subtitle">
+            Étudiant en MSc Finance à l'Université Paris Dauphine - PSL.
+          </p>
+
+        </div>
+        <div class="hero-photo">
+          <img src="assets/img/jpg-346527d6a968.jpg" alt="Louis Taboutin" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ILS M'ONT FAIT CONFIANCE (bandeau interactif) ============ -->
+    <section class="trust-section" id="confiance" aria-label="Structures qui m'ont fait confiance">
+      <div class="trust-label-row">
+        <span class="trust-label" data-i18n="trust-label">Ils m'ont fait confiance</span>
+      </div>
+      <div class="trust-rail">
+        <div class="trust-track" id="trust-track">
+          <div class="trust-set"><a href="#exp-epicoop" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-8872e2f76c63.png" alt="Logo EPICOOP PSL" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">EPICOOP PSL</span>
+                <span class="trust-badge-role" data-i18n="badge-role-11">Président</span>
+              </span>
+            </a>
+            
+<a href="https://dauphine.psl.eu/" target="_blank" rel="noopener noreferrer" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-c342bd802a2d.png" alt="Logo Université Paris Dauphine - PSL" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Dauphine - PSL</span>
+                <span class="trust-badge-role" data-i18n="badge-role-5">MSc Finance</span>
+              </span>
+            </a>
+            
+<a href="https://www.unaite.fr/" target="_blank" rel="noopener noreferrer" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-f4ceedc283a4.png" alt="Logo Unaite" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Unaite</span>
+                <span class="trust-badge-role" data-i18n="badge-role-8">Partenariat HackEurope</span>
+              </span>
+            </a>
+            
+<a href="https://group.bnpparibas" target="_blank" rel="noopener noreferrer" class="trust-badge is-upcoming">
+              <span class="trust-badge-logo"><img src="assets/img/png-b1afcc4658af.png" alt="Logo BNP Paribas" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">BNP Paribas</span>
+                <span class="trust-badge-role" data-i18n="badge-role-12">Stage à venir</span>
+              </span>
+            </a>
+          
+<a href="#exp-dauia" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-4ffd601edd3e.png" alt="Logo DAU'IA" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">DAU'IA</span>
+                <span class="trust-badge-role" data-i18n="badge-role-3">Co-fondateur & VP</span>
+              </span>
+            </a>
+            
+<a href="#exp-matrila" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-a229af272fd8.png" alt="Logo Matrila" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Matrila</span>
+                <span class="trust-badge-role" data-i18n="badge-role-6">Origination M&A</span>
+              </span>
+            </a>
+            
+<a href="https://www.aag-finance.com/" target="_blank" rel="noopener noreferrer" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-e719035ce5a0.png" alt="Logo AAG Finance" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">AAG Finance</span>
+                <span class="trust-badge-role" data-i18n="badge-role-4">Gestion de patrimoine</span>
+              </span>
+            </a>
+            
+<a href="https://www.remax.fr/" target="_blank" rel="noopener noreferrer" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-73dc44704fdd.png" alt="Logo RE/MAX" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">RE/MAX</span>
+                <span class="trust-badge-role" data-i18n="badge-role-1">Assistant RH & communication</span>
+              </span>
+            </a>
+            
+<a href="#exp-lyhin" class="trust-badge">
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Lyhin Engineering</span>
+                <span class="trust-badge-role" data-i18n="badge-role-2">Assistant des ventes</span>
+              </span>
+            </a>
+            
+<a href="#exp-eddmon" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-07212f2c4ae0.png" alt="Logo Eddmon" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Eddmon</span>
+                <span class="trust-badge-role" data-i18n="badge-role-10">Professeur particulier</span>
+              </span>
+            </a>
+            
+<a href="#exp-epicoop" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-dedb8c13b2a0.png" alt="Logo Dons Solidaires" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Dons Solidaires</span>
+                <span class="trust-badge-role" data-i18n="badge-role-7">Partenariat EPICOOP</span>
+              </span>
+            </a>
+            
+<a href="https://www.ucpa.com/" target="_blank" rel="noopener noreferrer" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-ec496c011d58.png" alt="Logo UCPA" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">UCPA</span>
+                <span class="trust-badge-role" data-i18n="badge-role-0">Animateur BAFA</span>
+              </span>
+            </a>
+            
+<a href="#exp-gradeup" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-a51939fa653a.png" alt="Logo Grade Up" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Grade Up</span>
+                <span class="trust-badge-role" data-i18n="badge-role-9">Professeur de chinois</span>
+              </span>
+            </a>
+            <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" class="trust-badge">
+              <span class="trust-badge-logo"><img src="assets/img/png-a3a01c7b5d97.png" alt="Logo Y Combinator" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Y Combinator</span>
+                <span class="trust-badge-role" data-i18n="badge-role-13">Startup School</span>
+              </span>
+            </a>
+            
+          </div>
+          <!-- Copie dupliquée (aria-hidden) pour un défilement en boucle continue -->
+          <div class="trust-set" aria-hidden="true"><a href="#exp-epicoop" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-8872e2f76c63.png" alt="Logo EPICOOP PSL" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">EPICOOP PSL</span>
+                <span class="trust-badge-role" data-i18n="badge-role-11">Président</span>
+              </span>
+            </a>
+            
+<a href="https://dauphine.psl.eu/" target="_blank" rel="noopener noreferrer" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-c342bd802a2d.png" alt="Logo Université Paris Dauphine - PSL" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Dauphine - PSL</span>
+                <span class="trust-badge-role" data-i18n="badge-role-5">MSc Finance</span>
+              </span>
+            </a>
+            
+<a href="https://www.unaite.fr/" target="_blank" rel="noopener noreferrer" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-f4ceedc283a4.png" alt="" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Unaite</span>
+                <span class="trust-badge-role" data-i18n="badge-role-8">Partenariat HackEurope</span>
+              </span>
+            </a>
+            
+<a href="https://group.bnpparibas" target="_blank" rel="noopener noreferrer" class="trust-badge is-upcoming" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-b1afcc4658af.png" alt="" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">BNP Paribas</span>
+                <span class="trust-badge-role" data-i18n="badge-role-12">Stage à venir</span>
+              </span>
+            </a>
+          
+<a href="#exp-dauia" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-4ffd601edd3e.png" alt="Logo DAU'IA" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">DAU'IA</span>
+                <span class="trust-badge-role" data-i18n="badge-role-3">Co-fondateur & VP</span>
+              </span>
+            </a>
+            
+<a href="#exp-matrila" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-a229af272fd8.png" alt="Logo Matrila" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Matrila</span>
+                <span class="trust-badge-role" data-i18n="badge-role-6">Origination M&A</span>
+              </span>
+            </a>
+            
+<a href="https://www.aag-finance.com/" target="_blank" rel="noopener noreferrer" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-e719035ce5a0.png" alt="" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">AAG Finance</span>
+                <span class="trust-badge-role" data-i18n="badge-role-4">Gestion de patrimoine</span>
+              </span>
+            </a>
+            
+<a href="https://www.remax.fr/" target="_blank" rel="noopener noreferrer" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-73dc44704fdd.png" alt="" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">RE/MAX</span>
+                <span class="trust-badge-role" data-i18n="badge-role-1">Assistant RH & communication</span>
+              </span>
+            </a>
+            
+<a href="#exp-lyhin" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Lyhin Engineering</span>
+                <span class="trust-badge-role" data-i18n="badge-role-2">Assistant des ventes</span>
+              </span>
+            </a>
+            
+<a href="#exp-eddmon" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-07212f2c4ae0.png" alt="Logo Eddmon" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Eddmon</span>
+                <span class="trust-badge-role" data-i18n="badge-role-10">Professeur particulier</span>
+              </span>
+            </a>
+            
+<a href="#exp-epicoop" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-dedb8c13b2a0.png" alt="Logo Dons Solidaires" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Dons Solidaires</span>
+                <span class="trust-badge-role" data-i18n="badge-role-7">Partenariat EPICOOP</span>
+              </span>
+            </a>
+            
+<a href="https://www.ucpa.com/" target="_blank" rel="noopener noreferrer" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-ec496c011d58.png" alt="Logo UCPA" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">UCPA</span>
+                <span class="trust-badge-role" data-i18n="badge-role-0">Animateur BAFA</span>
+              </span>
+            </a>
+            
+<a href="#exp-gradeup" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-a51939fa653a.png" alt="" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Grade Up</span>
+                <span class="trust-badge-role" data-i18n="badge-role-9">Professeur de chinois</span>
+              </span>
+            </a>
+            <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" class="trust-badge" tabindex="-1">
+              <span class="trust-badge-logo"><img src="assets/img/png-a3a01c7b5d97.png" alt="Logo Y Combinator" /></span>
+              <span class="trust-badge-text">
+                <span class="trust-badge-name">Y Combinator</span>
+                <span class="trust-badge-role" data-i18n="badge-role-13">Startup School</span>
+              </span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCES ============ -->
+    <section class="page-section" id="experiences">
+      <div class="section-kicker" data-i18n="exp-kicker">Parcours</div>
+      <h2 class="section-title" data-i18n="exp-title">Expériences</h2>
+      <p class="section-intro" data-i18n="exp-intro">
+        Un parcours à l'intersection de la finance d'entreprise, du wealth management et de l'entrepreneuriat associatif, entre Paris et l'Asie.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item" id="exp-matrila">
+          <span class="timeline-dot-logo"><img src="assets/img/png-a229af272fd8.png" alt="Logo Matrila" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-matrila">Origination M&A</span>
+            <span class="timeline-date">Mai – Juin 2024</span>
+          </div>
+          <div class="timeline-org">Matrila <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-matrila-1">Business developer pour la société Outmatch</li>
+            <li data-i18n="b-matrila-2">Optimisation du processus de prospection par des algorithmes (cibles EBITDA 500k–5M€)</li>
+            <li data-i18n="b-matrila-3">Réalisation d'analyses financières d'entreprises</li>
+          </ul>
+        </div>
+
+        
+<div class="timeline-item" id="exp-aag">
+          <span class="timeline-dot-logo"><img src="assets/img/png-e719035ce5a0.png" alt="Logo AAG Finance" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-aag">Assistant en gestion de patrimoine</span>
+            <span class="timeline-date">Juin – Juil. 2023</span>
+          </div>
+          <div class="timeline-org">AAG Finance <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-aag-1">Rédaction de contrats clients et de mandats d'investissement</li>
+            <li data-i18n="b-aag-2">Évaluation de la capacité d'emprunt des clients via analyse financière et contrôles de conformité</li>
+            <li data-i18n="b-aag-3">Participation à la création et à la gestion d'une société civile immobilière (SCI)</li>
+            <li data-i18n="b-aag-4">Estimation d'un bien immobilier</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item" id="exp-remax">
+          <span class="timeline-dot-logo"><img src="assets/img/png-73dc44704fdd.png" alt="Logo RE/MAX" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-remax">Assistant RH et communication</span>
+            <span class="timeline-date">Juin - Juil. 2023</span>
+          </div>
+          <div class="timeline-org">RE/MAX <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-remax-1">Prospection LinkedIn, HelloWork, Pôle emploi : recrutement d'alternants et d'agents immobiliers</li>
+            <li data-i18n="b-remax-2">Responsable de la communication réseaux sociaux : contenu, statistiques, engagement de la communauté, vidéos promotionnelles</li>
+            <li data-i18n="b-remax-3">Gestion et optimisation du site web et du LinkedIn de l'entreprise</li>
+            <li data-i18n="b-remax-4">Passage d'entretiens d'embauche et création d'annonces, flyers, livret d'accueil et dépliant</li>
+            <li data-i18n="b-remax-5">Démarchage FSBO (For Sale By Owner)</li>
+          </ul>
+        </div>
+
+        
+<div class="timeline-item" id="exp-lyhin">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-lyhin">Assistant des ventes</span>
+            <span class="timeline-date">Juin – Août 2025</span>
+          </div>
+          <div class="timeline-org">Lyhin Engineering Enterprise <span data-i18n="loc-malaysia">- Penang, Malaisie</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-lyhin-1">Gestion des stocks de pièces de rechange, amélioration de l'organisation et de l'efficacité opérationnelle</li>
+            <li data-i18n="b-lyhin-2">Coordination avec les fournisseurs pour le suivi des commandes et livraisons</li>
+            <li data-i18n="b-lyhin-3">Réception, contrôle et traitement des pièces détachées pour équipements industriels</li>
+          </ul>
+        </div>
+
+        
+<div class="timeline-item" id="exp-ucpa">
+          <span class="timeline-dot-logo"><img src="assets/img/png-ec496c011d58.png" alt="Logo UCPA" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-ucpa">Animateur BAFA</span>
+            <span class="timeline-date">Juil. - Août 2022 & Août 2024</span>
+          </div>
+          <div class="timeline-org">UCPA <span>- Bois-le-Roi & La Rochelle, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-ucpa-1">Encadrement de 90 enfants (9-13 ans) en colonie de vacances à Bois-le-Roi</li>
+            <li data-i18n="b-ucpa-2">Animation d'un séjour pour 35 enfants issus d'un milieu socio-économique défavorisé à La Rochelle</li>
+            <li data-i18n="b-ucpa-3">Visite de Fort Boyard organisée pour le groupe</li>
+          </ul>
+        </div>
+
+        
+<div class="timeline-item" id="exp-eddmon">
+          <span class="timeline-dot-logo"><img src="assets/img/png-07212f2c4ae0.png" alt="Logo Eddmon" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-eddmon">Professeur particulier</span>
+            <span class="timeline-date">2022 – Aujourd'hui</span>
+          </div>
+          <div class="timeline-org">Eddmon, Grade Up <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-eddmon-1">Plus de 400 heures de cours particuliers et de soutien scolaire dispensées</li>
+            <li data-i18n="b-eddmon-2">Accompagnement d'élèves de collège et de lycée, jusqu'au niveau L3</li>
+            <li data-i18n="b-eddmon-3">Professeur de chinois pour une élève de seconde générale (Grade Up)</li>
+          </ul>
+        </div>
+      
+      </div>
+
+      <div class="subsection-label" data-i18n="exp-assoc-label">Engagement associatif</div>
+      <div class="timeline">
+        <div class="timeline-item" id="exp-dauia">
+          <span class="timeline-dot-logo"><img src="assets/img/png-4ffd601edd3e.png" alt="Logo DAU'IA" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-dauia">Co-fondateur, puis Manager, Trésorier et Vice-Président</span>
+            <span class="timeline-date">2024 – Aujourd'hui</span>
+          </div>
+          <div class="timeline-org">DAU'IA <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-dauia-1">Organisation d'échanges avec des experts de l'IA lors de conférences et tables rondes (Dauphine Digital Days)</li>
+            <li data-i18n="b-dauia-2">Pilotage de bout en bout de conférences, débats et hackathons sur l'IA (HackEurope)</li>
+            <li data-i18n="b-dauia-3">Sécurisation et suivi de partenariats, dont Unaite (HackEurope : 250k€ de cash prize)</li>
+            <li data-i18n="b-dauia-4">Président et membre du board d'Unaite</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item" id="exp-epicoop">
+          <span class="timeline-dot-logo"><img src="assets/img/png-8872e2f76c63.png" alt="Logo EPICOOP PSL" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-epicoop">Responsable partenariats, puis Président d'association</span>
+            <span class="timeline-date">Sept. 2022 - Juin 2025</span>
+          </div>
+          <div class="timeline-org">EPICOOP PSL <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-epicoop-1">Direction d'une association solidaire de 60 membres actifs : stratégie, opérations, coordination d'équipe</li>
+            <li data-i18n="b-epicoop-2">Distribution mensuelle de denrées alimentaires et produits d'hygiène pour 250 personnes</li>
+            <li data-i18n="b-epicoop-3">Organisation d'événements pour les étudiants</li>
+            <li data-i18n="b-epicoop-4">Développement de partenariats avec des donateurs majeurs (Dons Solidaires, Disneyland Paris, Yves Rocher)</li>
+            <li data-i18n="b-epicoop-5">Gestion d'un budget annuel de plus de 11 000€ et de plus de 110 000€ de matériel donné</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="role-benevole">Bénévole</span>
+            <span class="timeline-date">2021 – 2025</span>
+          </div>
+          <div class="timeline-org">Entraide scolaire amicale, Ludothèque de Marly-le-Roi <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-entraide-1">Soutien scolaire personnalisé et mentorat d'un enfant de 6 ans</li>
+            <li data-i18n="b-entraide-2">Accueil des familles et gestion de l'organisation et de l'inventaire des jeux et jouets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section class="page-section" id="formation">
+      <div class="section-kicker" data-i18n="form-kicker">Parcours académique</div>
+      <h2 class="section-title" data-i18n="form-title">Formation</h2>
+      <p class="section-intro" data-i18n="form-intro">
+        Un cursus à l'Université Paris Dauphine - PSL, de la licence de mathématiques et informatique au MSc Finance, complété par une sélection Y Combinator Startup School.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item" id="form-msc">
+          <span class="timeline-dot-logo"><img src="assets/img/png-c342bd802a2d.png" alt="Logo Universite Paris Dauphine - PSL" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="degree-msc">Master, Finance</span>
+            <span class="timeline-date">Sept. 2025 - Juin 2028</span>
+          </div>
+          <div class="timeline-org">Université Paris Dauphine - PSL <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-msc-1">Matières : Investissements et marchés financiers, Produits dérivés, Analyse financière, VBA, Banque et intermédiation financière, Marchés obligataires, Primes de risque, Assurance, Évaluation d'entreprise</li>
+            <li data-i18n="b-msc-2">Projet - Analyse financière & Valorisation (Publicis Groupe) : diagnostic complet des états financiers et benchmark sectoriel, valorisation par multiples (P/E, EV/EBITDA) pour une recommandation d'achat argumentée</li>
+            <li data-i18n="b-msc-3">Projet - Systematic Value Premium Strategy (Python) : modèle d'investissement quantitatif intégrant le F-Score de Piotroski et les métriques de qualité AQR pour limiter les "value traps" et optimiser le couple rendement/risque</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item" id="form-yc">
+          <span class="timeline-dot-logo"><img src="assets/img/png-a3a01c7b5d97.png" alt="Logo Y Combinator" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="degree-yc">Startup School</span>
+            <span class="timeline-date">Juin 2026</span>
+          </div>
+          <div class="timeline-org">Y Combinator <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-yc-1">Sélectionné par YC parmi quelques centaines de candidats retenus sur 5 000 candidatures pour cet événement</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item" id="form-licence-mgo">
+          <span class="timeline-dot-logo"><img src="assets/img/png-c342bd802a2d.png" alt="Logo Universite Paris Dauphine - PSL" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="degree-mgo">Licence, Management Gestion des Organisations</span>
+            <span class="timeline-date">Sept. 2024 - 2025</span>
+          </div>
+          <div class="timeline-org">Université Paris Dauphine - PSL <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-mgo-1">8ème de la promotion</li>
+            <li data-i18n="b-mgo-2">Major de promotion en Mathématiques financières</li>
+            <li data-i18n="b-mgo-3">Matières : Finance d'entreprise, Mathématiques financières, Statistiques, Comptabilité financière, Comptabilité de gestion, Sociologie, Droit du travail, Droit économique, Fiscalité, Management d'aide à la décision</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item" id="form-licence-maths">
+          <span class="timeline-dot-logo"><img src="assets/img/png-c342bd802a2d.png" alt="Logo Universite Paris Dauphine - PSL" /></span>
+          <div class="timeline-header">
+            <span class="timeline-role" data-i18n="degree-maths">Licence, Mathématiques et Informatique</span>
+            <span class="timeline-date">2022 - 2024</span>
+          </div>
+          <div class="timeline-org">Université Paris Dauphine - PSL <span>- Paris, France</span></div>
+          <ul class="timeline-list">
+            <li data-i18n="b-maths-1">Matières : Analyse, Algèbre, Probabilités, Méthodes numériques, Python, R, SQL, Access, Macroéconomie, Microéconomie, Finance, Excel, VBA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection-label" data-i18n="form-certs-label">Certifications</div>
+      <div class="cert-list">
+        <a class="cert-item" href="https://portal.bloombergforeducation.com/certificates/19Bo8g5w2SSoZ7hm56x78G8R" target="_blank" rel="noopener noreferrer">
+          <span class="cert-logo"><img src="assets/img/png-918ccdd8e1c5.png" alt="Logo Bloomberg" /></span>
+          <span class="cert-text">
+            <span class="cert-name" data-i18n="cert-bloomberg-name">Bloomberg Finance Fundamentals</span>
+            <span class="cert-meta" data-i18n="cert-bloomberg-meta">Bloomberg - Juillet 2026</span>
+          </span>
+        </a>
+        <a class="cert-item" href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/YD2kY95RQxQtXxFTS_Sj7temL583QAYpHXD_6a567d69c38691e70ca32b22_1784101039856_completion_certificate.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="cert-logo"><img src="assets/img/png-a96ae89017bd.png" alt="Logo J.P. Morgan" /></span>
+          <span class="cert-text">
+            <span class="cert-name" data-i18n="cert-jpm-name">JPMorganChase - Investment Banking Job Simulation</span>
+            <span class="cert-meta" data-i18n="cert-jpm-meta">Forage - Juillet 2026</span>
+          </span>
+        </a>
+        <a class="cert-item" href="https://www.etsglobal.org/fr/en/digital-score-report/70850DC9359A4B941C4EB901B2962BB61C97189E1910878B5E0848882B5ABEE9cHVTcDNpYytDdzkzekduWUVvMUlwWkNBTEhaWmJpVmM3WFAzN0NYaGl1WUdVWHcx" target="_blank" rel="noopener noreferrer">
+          <span class="cert-logo"><img src="assets/img/png-31a31f4cf8fc.png" alt="Logo ETS" /></span>
+          <span class="cert-text">
+            <span class="cert-name" data-i18n="cert-toeic-name">TOEIC C1 Level (945/990)</span>
+            <span class="cert-meta" data-i18n="cert-toeic-meta">ETS - Obtenu sept. 2025, valide jusqu'à sept. 2027</span>
+          </span>
+        </a>
+        <div class="cert-item">
+          <span class="cert-logo"><img src="assets/img/png-4dc7b8220e97.png" alt="Logo Pix" /></span>
+          <span class="cert-text">
+            <span class="cert-name" data-i18n="cert-pix-name">Pix (692/896)</span>
+            <span class="cert-meta" data-i18n="cert-pix-meta">Certification des compétences numériques</span>
+          </span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-text">
+            <span class="cert-name" data-i18n="cert-bafa-name">Brevet d'Aptitude aux Fonctions d'Animateur (BAFA)</span>
+            <span class="cert-meta" data-i18n="cert-bafa-meta">Gouvernement - Octobre 2022</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+  <!-- L'appel des scripts originaux de DAU'IA pour conserver les animations si tu ajoutes les fichiers dans ton repo -->
+    <!-- ============ RESUME 30 SECONDES ============ -->
+  <div class="quicksum-overlay" id="quicksum-overlay">
+    <div class="quicksum-card" role="dialog" aria-modal="true" aria-label="Resume rapide">
+      <button type="button" class="quicksum-close" onclick="closeQuickSummary()" aria-label="Fermer">&times;</button>
+      <div class="quicksum-kicker" data-i18n="qs-kicker">Résumé 30 secondes</div>
+      <h2 class="quicksum-name">Louis TABOUTIN</h2>
+      <p class="quicksum-role" data-i18n="qs-role">MSc Finance - Université Paris Dauphine - PSL - Co-fondateur de DAU'IA</p>
+
+      <div class="quicksum-block">
+        <div class="quicksum-block-label" data-i18n="qs-label-highlights">Points clés</div>
+        <ul class="quicksum-list" data-i18n-html="qs-highlights">
+          <li>Origination M&A chez Matrila, gestion de patrimoine chez AAG Finance</li>
+          <li>Co-fondateur de DAU'IA : équipe de 20+ membres, hackathon HackEurope (250k€ de cagnotte)</li>
+          <li>Président d'EPICOOP PSL : association solidaire de 60 membres, 250 personnes aidées / mois</li>
+          <li>Sélectionné par Y Combinator (Startup School), TOEIC C1 (945/990)</li>
+        </ul>
+      </div>
+
+      <div class="quicksum-block">
+        <div class="quicksum-block-label" data-i18n="qs-label-formation">Formation</div>
+        <ul class="quicksum-list" data-i18n-html="qs-formation">
+          <li>MSc Finance, Université Paris Dauphine - PSL (2025-2028)</li>
+          <li>Licences Management et Mathématiques & Informatique, Dauphine - PSL</li>
+        </ul>
+      </div>
+
+      <div class="quicksum-block">
+        <div class="quicksum-block-label" data-i18n="qs-label-skills">Compétences</div>
+        <ul class="quicksum-list" data-i18n-html="qs-skills">
+          <li>Python, Excel/VBA, Bloomberg, modélisation financière, valorisation par multiples</li>
+        </ul>
+      </div>
+
+      <div class="quicksum-cta">
+        <a class="primary" href="mailto:louis.taboutin@dauphine.eu" data-i18n="qs-cta-contact">Me contacter</a>
+        <a href="https://fr.linkedin.com/in/louis-taboutin" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="quicksum-cv-link" download="CV_Louis_TABOUTIN.pdf" href="assets/CV_Louis_TABOUTIN.pdf" target="_blank" data-i18n="qs-cta-cv">Télécharger le CV</a>
+        <button type="button" class="pdf-btn" onclick="window.print()" data-i18n="qs-cta-pdf">Exporter cette page en PDF</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- ============ FORMULAIRE DE CONTACT ============ -->
+  <div class="contact-modal-overlay" id="contact-overlay">
+    <div class="contact-modal-card" role="dialog" aria-modal="true" aria-label="Formulaire de contact">
+      <button type="button" class="contact-modal-close" onclick="closeContactForm()" aria-label="Fermer">&times;</button>
+      <h2 class="contact-modal-title" data-i18n="contact-title">Me contacter</h2>
+      <form id="contact-form" onsubmit="return submitContactForm(event)">
+        <div class="contact-field">
+          <label for="contact-name" data-i18n="contact-name-label">Votre nom</label>
+          <input type="text" id="contact-name" required />
+        </div>
+        <div class="contact-field">
+          <label for="contact-email" data-i18n="contact-email-label">Votre email</label>
+          <input type="email" id="contact-email" required />
+        </div>
+        <div class="contact-field">
+          <label for="contact-message" data-i18n="contact-message-label">Votre message</label>
+          <textarea id="contact-message" required></textarea>
+        </div>
+        <button type="submit" class="contact-submit" data-i18n="contact-submit">Envoyer</button>
+        <p class="contact-modal-note" data-i18n="contact-note">Ouvre votre client mail avec le message pré-rempli.</p>
+      </form>
+    </div>
+  </div>
+
+    <!-- ============ TERMINAL EASTER EGG ============ -->
+  <div class="terminal-overlay" id="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-titlebar-label">louis@portfolio: ~</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-line">Tape <span class="terminal-prompt-color">help</span> pour voir les commandes disponibles.</div>
+      </div>
+      <div class="terminal-input-row">
+        <span class="terminal-prompt-color">&gt;</span>
+        <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" />
+      </div>
+    </div>
+    <div class="terminal-hint">Echap pour fermer</div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script>window.PAGE_TITLE_I18N = {"fr": "Louis TABOUTIN - Portfolio", "en": "Louis TABOUTIN - Portfolio"};</script>
+  <script src="script.js"></script>
+  <script src="js/brain.js?v=3" defer></script>
+  <script src="js/main.js?v=4" defer></script>
+          </body>
+</html>
