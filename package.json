@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-louis-taboutin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.18"
+  }
+}
